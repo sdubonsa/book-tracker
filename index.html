@@ -24,17 +24,27 @@
         <!-- CONTENT -->
         <div class="row content">
             <div class="col-m-12 form-popup" id="myForm">
-                <form action="/action_page.php" class="form-container">
+                <form class="form-container">
                   <p class="h4">Add Book</p>
 
                   <div class="mb-3">
                     <label for="book-name" class="form-label"><b>Book Name</b></label>
-                    <input class="form-control" type="text" placeholder="Lord of the Rings" name="bpok-name" required>
+                    <input id="book-name" class="form-control" type="text" placeholder="Lord of the Rings" name="book-name" required>
                   </div>
 
                   <div class="mb-3">
                     <label for="book-author"><b>Author</b></label>
-                    <input class="form-control" type="text" placeholder="Albert Einstein" name="book-author" required>
+                    <input id="book-author" class="form-control" type="text" placeholder="Albert Einstein" name="book-author" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="book-pages"><b>Pages</b></label>
+                    <input id="book-pages" class="form-control" type="number" placeholder="600" name="book-pages" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="is-read"><b>Read?</b></label>
+                    <input id="is-read" type="checkbox" name="is-read">
                   </div>
               
                   <button type="submit" class="btn btn-primary submit-btn">Submit</button>

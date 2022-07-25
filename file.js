@@ -10,25 +10,40 @@ function Book(title, author, pages, read) {
     this.id
 }
 
-let bookOne = new Book('Test Book', 'Santiago Dubon', 300, true)
-
 // QUERY SELECTORS
 let content = document.querySelector('.content')
 let addBookButton = document.querySelector('.add-book-btn')
-let submitButtton = document.querySelector('.submit-btn')
+var form = document.querySelector("form");
 
 // EVENT HANDLERS
 addBookButton.addEventListener('click', openForm)
-submitButtton.addEventListener('click', function() {
-    addNewBook(bookOne)
-})
 
-// FUNCTIONS
-function addNewBook(book) {
+form.onsubmit = function(e){
+    e.preventDefault();
+
+    let title = document.getElementById("book-name").value
+    let author =  document.getElementById("book-author").value
+    let pages = document.getElementById("book-pages").value
+    let isRead = document.getElementById("is-read").value
+
+    if(isRead === 'on') {
+        isRead = true
+    } else [
+        isRead = false
+    ]
+
+    let book = new Book(title, author, pages, isRead)
+
     // ADD BOOK TO STORAGE, GIVE BOOK AN ID
     library.push(book)
     book.id = library.length
 
+    addNewBook(book)
+    form.reset()
+}
+
+// FUNCTIONS
+function addNewBook(book) {
     // GIVE APPROPRIATE CLASSES
     let card = document.createElement('div')
     card.classList.add('col-sm-3')
