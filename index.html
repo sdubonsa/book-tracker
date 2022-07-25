@@ -23,7 +23,8 @@
 
         <!-- CONTENT -->
         <div class="row content">
-            <div class="col-m-12 form-popup" id="myForm">
+            <div class="col card-content"></div>
+            <div class="col form-popup" id="myForm">
                 <form class="form-container">
                   <p class="h4">Add Book</p>
 
@@ -47,7 +48,7 @@
                     <input id="is-read" type="checkbox" name="is-read">
                   </div>
               
-                  <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+                  <button type="submit" class="btn btn-primary" onclick="updateDisplay()">Submit</button>
                   <button type="button" class="btn btn-danger cancel" onclick="closeForm()">Close</button>
                 </form>
               </div> 

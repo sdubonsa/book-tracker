@@ -7,11 +7,11 @@ function Book(title, author, pages, read) {
     this.author = author
     this.pages = pages
     this.read = read
-    this.id
 }
 
 // QUERY SELECTORS
 let content = document.querySelector('.content')
+let cardContent = document.querySelector('.card-content')
 let addBookButton = document.querySelector('.add-book-btn')
 var form = document.querySelector("form");
 
@@ -28,15 +28,41 @@ form.onsubmit = function(e){
 
     let book = new Book(title, author, pages, isRead)
 
-    // ADD BOOK TO STORAGE, GIVE BOOK AN ID
+    // ADD BOOK TO STORAGE
     library.push(book)
-    book.id = library.length
 
-    addNewBook(book)
+    updateDisplay()
     form.reset()
 }
 
 // FUNCTIONS
+function updateDisplay() {
+    console.table(library)
+
+    cardContent.innerHTML = ''
+
+    for(let book of library) {
+        createCard(book)
+
+        // GIVE APPROPRIATE CLASSES
+        let card = document.createElement('div')
+        card.classList.add('col-sm-3')
+
+        // CREATE THE CARD 
+        card.innerHTML += createCard(book)
+        cardContent.appendChild(card)
+
+        //  DELETE BUTTON FUNCTIONALITY
+        let deleteButton = document.querySelectorAll('.dlt-btn')
+        for(let i = 0; i < deleteButton.length; i++) {
+            deleteButton[i].addEventListener('click', function() {
+                cardContent.removeChild(this.parentNode.parentNode.parentNode)
+                library.pop(book)
+            })
+        }
+    }
+}
+
 function addNewBook(book) {
     // GIVE APPROPRIATE CLASSES
     let card = document.createElement('div')
@@ -51,6 +77,7 @@ function addNewBook(book) {
     for(let i = 0; i < deleteButton.length; i++) {
         deleteButton[i].addEventListener('click', function() {
             content.removeChild(this.parentNode.parentNode.parentNode)
+
         })
     }
 }
