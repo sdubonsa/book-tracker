@@ -15,6 +15,7 @@
             <div class="col">
                 <h1 class="display-6">Book Tracker</h1>
             </div>
+
             <div class="col header-button">
                 <button type="button" class="btn btn-success add-book-btn">Add Book</button>
             </div>
@@ -22,6 +23,24 @@
 
         <!-- CONTENT -->
         <div class="row content">
+            <div class="col-m-12 form-popup" id="myForm">
+                <form action="/action_page.php" class="form-container">
+                  <p class="h4">Add Book</p>
+
+                  <div class="mb-3">
+                    <label for="book-name" class="form-label"><b>Book Name</b></label>
+                    <input class="form-control" type="text" placeholder="Lord of the Rings" name="bpok-name" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="book-author"><b>Author</b></label>
+                    <input class="form-control" type="text" placeholder="Albert Einstein" name="book-author" required>
+                  </div>
+              
+                  <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+                  <button type="button" class="btn btn-danger cancel" onclick="closeForm()">Close</button>
+                </form>
+              </div> 
         </div>
     </div>
 

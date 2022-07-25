@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    border: 1px solid black;
 }
 
 /* HEADER STYLING */
@@ -13,4 +12,9 @@
 .header-button {
     display: flex;
     justify-content: flex-end;
+}
+
+/* CONTENT STLYING */
+.form-popup {
+    display: none;
 }
