@@ -26,12 +26,6 @@ form.onsubmit = function(e){
     let pages = document.getElementById("book-pages").value
     let isRead = document.getElementById("is-read").value
 
-    if(isRead === 'on') {
-        isRead = true
-    } else [
-        isRead = false
-    ]
-
     let book = new Book(title, author, pages, isRead)
 
     // ADD BOOK TO STORAGE, GIVE BOOK AN ID
@@ -47,28 +41,22 @@ function addNewBook(book) {
     // GIVE APPROPRIATE CLASSES
     let card = document.createElement('div')
     card.classList.add('col-sm-3')
-    card.classList.add(`book-${book.id}`)
 
     // CREATE THE CARD 
     card.innerHTML += createCard(book)
     content.appendChild(card)
 
-    // ADD DELETE BUTTON FUNCTIONALITY
-    let deleteButton = document.querySelector(`.btn-${book.id}`)
-    console.log(book.id)
-    deleteButton.addEventListener('click', function() {
-        deleteCard(book.id)
-    })
+    //  DELETE BUTTON FUNCTIONALITY
+    let deleteButton = document.querySelectorAll('.dlt-btn')
+    for(let i = 0; i < deleteButton.length; i++) {
+        deleteButton[i].addEventListener('click', function() {
+            content.removeChild(this.parentNode.parentNode.parentNode)
+        })
+    }
 }
 
 function createCard(book) {
-    return `<div class="card text-bg-dark mb-3" style="max-width: 18rem;"><div class="card-body"><h5 class="card-title">${book.title} by ${book.author}</h5><p class="card-text">Pages: ${book.pages}<br>Book Read: ${book.read}</p><a href="#" class="btn btn-danger btn-${book.id}">Delete</a></div></div>`
-}
-
-function deleteCard(bookID) {
-    let card = document.querySelector(`.book-${bookID}`)
-    console.log(bookID)
-    content.removeChild(card)
+    return `<div class="card text-bg-dark mb-3" style="max-width: 18rem;"><div class="card-body"><h5 class="card-title">${book.title} by ${book.author}</h5><p class="card-text">Pages: ${book.pages}<br>Book Read: ${book.read}</p><a href="#" class="btn btn-danger dlt-btn">Delete</a></div></div>`
 }
 
 function openForm() {
