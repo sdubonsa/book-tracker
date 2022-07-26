@@ -1,4 +1,4 @@
-# Etch-a-Sketch :pencil:
+# Book Tracker :book:
 A book tracking software that allows users to keep track of books to be read / have read. 
 
 # Technologies Used :computer:
