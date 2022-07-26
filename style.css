@@ -4,15 +4,6 @@
 }
 
 /* HEADER STYLING */
-.header {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.header-button {
-    display: flex;
-    justify-content: flex-end;
-}
 
 /* CONTENT STLYING */
 .form-popup {

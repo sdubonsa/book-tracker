@@ -11,20 +11,19 @@
 <body>
     <div class="container-fluid">
         <!-- HEADER -->
-        <div class="row header">
-            <div class="col">
-                <h1 class="display-6">Book Tracker</h1>
-            </div>
-
-            <div class="col header-button">
-                <button type="button" class="btn btn-success add-book-btn">Add Book</button>
-            </div>
-        </div>
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+          <h1 class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+            Book Tracker
+          </h1>
+    
+          <div class="col-md-3 text-end">
+            <button type="button" class="btn btn-success add-book-btn">+ Add Book</button>
+          </div>
+        </header>
 
         <!-- CONTENT -->
         <div class="row content">
-            <div class="col card-content"></div>
-            <div class="col form-popup" id="myForm">
+            <div class="col-md-12 form-popup pb-3" id="myForm">
                 <form class="form-container">
                   <p class="h4">Add Book</p>
 
@@ -51,7 +50,8 @@
                   <button type="submit" class="btn btn-primary" onclick="updateDisplay()">Submit</button>
                   <button type="button" class="btn btn-danger cancel" onclick="closeForm()">Close</button>
                 </form>
-              </div> 
+              </div>
+              <div class="col card-content"></div> 
         </div>
     </div>
 

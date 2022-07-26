@@ -93,3 +93,5 @@ function openForm() {
   function closeForm() {
     document.getElementById("myForm").style.display = "none";
 } 
+
+console.log("2" + 5)
