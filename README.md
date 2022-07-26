@@ -12,4 +12,4 @@ Building this application I have learn how to use Bootstrap while also furtherin
 
 # Test it out! :eyes:
 NOTE: This is not optimized for mobile (yet), there is also some bugs and issues that need to be ironed out. <br>
-[Book Tracker](https://sdubonsa.github.io/etch-a-sketch/)
+[Book Tracker](https://sdubonsa.github.io/book-tracker/)
